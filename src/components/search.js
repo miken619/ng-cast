@@ -4,7 +4,7 @@ angular.module('video-player')
   // TODO
   bindings: {
     result: '<',
-    input: '='
+    input: '<'
   },
   templateUrl: 'src/templates/search.html'
 });
