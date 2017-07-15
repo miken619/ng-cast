@@ -18,6 +18,7 @@ angular.module('video-player')
   }.bind(this);
 
   
+
    
   $scope.$ctrl.selectVideo = function(video) {
     $scope.$ctrl.currentVideo = video;
