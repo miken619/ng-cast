@@ -4,6 +4,7 @@ angular.module('video-player')
 .component('videoList', {
   bindings: {
     videos: '<',
+    ontitleclick: '<',
     onClick: '<'
   },
   
