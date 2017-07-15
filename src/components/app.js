@@ -1,6 +1,6 @@
 angular.module('video-player')
 
-.controller('appCtrl', function($scope) {
+.controller('appCtrl', function($scope, youTube) {
   $scope.$ctrl.videos = window.exampleVideoData;  
   $scope.$ctrl.currentVideo = window.exampleVideoData[0];
   //$scope.input = '';  
@@ -14,12 +14,17 @@ angular.module('video-player')
 
   };
    
-  $scope.$ctrl.selectVideo = function() {
-
+  $scope.$ctrl.selectVideo = function(video) {
+    $scope.$ctrl.currentVideo = video;
   };
-  $scope.$ctrl.searchResults = function() {
-
+  $scope.$ctrl.searchResults = function(videos) {
+    $scope.$ctrl.videos = videos;  
   };
+
+  youTube.getYoutube('ham and cheese', function(data) {
+    $scope.$ctrl.selectVideo(data[0]);
+    $scope.$ctrl.searchResults(data);
+  });
 })
 
 .component('app', { 
